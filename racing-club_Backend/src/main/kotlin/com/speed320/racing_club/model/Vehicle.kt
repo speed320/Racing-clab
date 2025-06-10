@@ -1,4 +1,4 @@
-package com.speed320.racing_club.models
+package com.speed320.racing_club.model
 
 import jakarta.persistence.*
 
@@ -7,26 +7,26 @@ import jakarta.persistence.*
 data class Vehicle(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
+    val id: Long? = null,
 
     @Column(nullable = false)
-    val type: String,
+    var type: String,
 
     @Column(nullable = false)
-    val make: String,
+    var make: String,
 
     @Column(nullable = false)
-    val model: String,
+    var model: String,
 
     @Column(nullable = false)
-    val year: Int,
+    var year: Int,
 
-    @Column(nullable = false)
-    val engineNumber: String,
+    @Column(name = "engine_number", nullable = false)
+    var engineNumber: String,
 
     @ManyToOne
     @JoinColumn(name = "racer_id", nullable = false)
-    val racer: Racer,
+    var racer: Racer,
 
-    val description: String? = null
+    var description: String? = null
 )

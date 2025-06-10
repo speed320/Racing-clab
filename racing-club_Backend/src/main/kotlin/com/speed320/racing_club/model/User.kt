@@ -1,4 +1,4 @@
-package com.speed320.racing_club.models
+package com.speed320.racing_club.model
 
 import jakarta.persistence.*
 import org.springframework.security.core.GrantedAuthority
@@ -6,31 +6,31 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
 @Entity
-@Table(name = "User")
+@Table(name = "\"User\"")
 data class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
+    val id: Long? = null,
 
     @Column(nullable = false)
-    val name: String,
+    var name: String,
+
+    @Column(name = "password", nullable = false)
+    var _password: String,
 
     @Column(nullable = false)
-    val _password: String,
-
-    @Column(nullable = false)
-    val role: String,
+    var role: String,
 
     @Column(nullable = false, unique = true)
-    val email: String,
+    var email: String,
 
     @OneToOne
     @JoinColumn(name = "racer_id")
-    val racer: Racer? = null,
+    var racer: Racer? = null,
 
     @OneToOne
     @JoinColumn(name = "employee_id")
-    val employee: Employee? = null
+    var employee: Employee? = null
 ) : UserDetails {
     override fun getAuthorities(): Collection<GrantedAuthority> {
         return listOf(SimpleGrantedAuthority("ROLE_$role"))

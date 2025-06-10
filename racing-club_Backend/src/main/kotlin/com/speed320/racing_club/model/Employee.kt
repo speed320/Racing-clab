@@ -1,4 +1,4 @@
-package com.speed320.racing_club.models
+package com.speed320.racing_club.model
 
 import jakarta.persistence.*
 import java.time.LocalDate
@@ -8,23 +8,23 @@ import java.time.LocalDate
 data class Employee(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    val id: Long = 0,
+    val id: Long? = null,
 
     @Column(nullable = false)
-    val fullname: String,
+    var fullname: String,
+
+    @Column(name = "date_of_birth", nullable = false)
+    var dateOfBirth: LocalDate,
 
     @Column(nullable = false)
-    val dateOfBirth: LocalDate,
-
-    @Column(nullable = false)
-    val passport: String,
+    var passport: String,
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
-    val gender: Racer.Gender,
-
-    val placeOfLiving: String? = null,
+    var gender: Racer.Gender,
+    @Column(name = "place_of_living")
+    var placeOfLiving: String? = null,
 
     @Column(nullable = false)
-    val position: String
+    var position: String
 )
