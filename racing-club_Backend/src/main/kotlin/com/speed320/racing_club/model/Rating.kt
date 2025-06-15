@@ -5,7 +5,7 @@ import java.io.Serializable
 import java.time.LocalTime
 
 @Entity
-@Table(name = "Rating")
+@Table(name = "rating")
 data class Rating(
     @EmbeddedId
     val id: RatingId? = null,

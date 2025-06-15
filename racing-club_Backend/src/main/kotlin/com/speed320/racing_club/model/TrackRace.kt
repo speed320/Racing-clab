@@ -4,7 +4,7 @@ import jakarta.persistence.*
 import java.io.Serializable
 
 @Entity
-@Table(name = "Track_Race")
+@Table(name = "track_race")
 data class TrackRace(
     @EmbeddedId
     val id: TrackRaceId? = null,

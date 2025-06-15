@@ -12,7 +12,9 @@ fun User.toDto(): UserDto = UserDto(
     role = role,
     email = email,
     racerId = racer?.id,
-    employeeId = employee?.id
+    racerName = racer?.fullName,
+    employeeId = employee?.id,
+    employeeName = employee?.fullname
 )
 
 fun UserDto.toEntity(

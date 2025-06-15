@@ -4,13 +4,13 @@ import jakarta.persistence.*
 import java.time.LocalDate
 
 @Entity
-@Table(name = "Racer")
+@Table(name = "racer")
 data class Racer(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     val id: Long? = null,
 
-    @Column(nullable = false)
+    @Column(name = "fullname", nullable = false)
     var fullName: String,
 
     @Column(name = "date_of_birth",nullable = false)
@@ -39,6 +39,6 @@ data class Racer(
     var photo: String? = null,
 ) {
     enum class Gender {
-        MALE, FEMALE, OTHER
+        Male, Female, Other
     }
 }

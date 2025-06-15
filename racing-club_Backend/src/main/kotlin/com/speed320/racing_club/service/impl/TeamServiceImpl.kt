@@ -1,6 +1,5 @@
 package com.speed320.racing_club.service.impl
 
-import com.speed320.racing_club.service.impl.AbstractCrudService
 import com.speed320.racing_club.dto.TeamDto
 import com.speed320.racing_club.mapping.toDto
 import com.speed320.racing_club.mapping.toEntity

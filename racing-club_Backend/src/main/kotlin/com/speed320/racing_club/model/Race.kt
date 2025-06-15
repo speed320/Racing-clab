@@ -5,7 +5,7 @@ import java.time.LocalDate
 import java.time.LocalTime
 
 @Entity
-@Table(name = "Race")
+@Table(name = "race")
 data class Race(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

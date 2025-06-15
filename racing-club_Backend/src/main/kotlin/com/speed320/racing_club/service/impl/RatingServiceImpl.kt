@@ -1,6 +1,5 @@
 package com.speed320.racing_club.service.impl
 
-import com.speed320.racing_club.service.impl.AbstractCrudService
 import com.speed320.racing_club.dto.RatingDto
 import com.speed320.racing_club.model.Rating
 import com.speed320.racing_club.model.RatingId
@@ -20,7 +19,9 @@ class RatingServiceImpl(
     toDto = { rating ->
         RatingDto(
             racerId = rating.id!!.racerId,
+            racerName = rating.racer.fullName,
             raceId = rating.id!!.raceId,
+            raceName = rating.race.name,
             racerPlace = rating.racerPlace,
             racerTime = rating.racerTime
         )

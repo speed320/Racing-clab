@@ -8,7 +8,9 @@ import com.speed320.racing_club.model.RatingId
 
 fun Rating.toDto(): RatingDto = RatingDto(
     racerId = id?.racerId ?: throw IllegalStateException("Rating has no ID"),
+    racerName = racer.fullName,
     raceId = id?.raceId ?: throw IllegalStateException("Rating has no ID"),
+    raceName = race.name,
     racerPlace = racerPlace,
     racerTime = racerTime
 )

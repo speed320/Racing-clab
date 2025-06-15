@@ -2,11 +2,10 @@ package com.speed320.racing_club.model
 
 import jakarta.persistence.*
 import org.springframework.security.core.GrantedAuthority
-import org.springframework.security.core.authority.SimpleGrantedAuthority
 import org.springframework.security.core.userdetails.UserDetails
 
 @Entity
-@Table(name = "\"User\"")
+@Table(name = "app_user")
 data class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,7 +18,8 @@ data class User(
     var _password: String,
 
     @Column(nullable = false)
-    var role: String,
+    @Enumerated(EnumType.STRING)
+    var role: Role,
 
     @Column(nullable = false, unique = true)
     var email: String,
@@ -32,8 +32,14 @@ data class User(
     @JoinColumn(name = "employee_id")
     var employee: Employee? = null
 ) : UserDetails {
-    override fun getAuthorities(): Collection<GrantedAuthority> {
-        return listOf(SimpleGrantedAuthority("ROLE_$role"))
+
+    @Transient
+    private var _authorities: Collection<GrantedAuthority> = emptyList()
+
+    override fun getAuthorities(): Collection<GrantedAuthority> = _authorities
+
+    fun setAuthorities(authorities: Collection<GrantedAuthority>) {
+        this._authorities = authorities
     }
 
     override fun getUsername(): String = email
@@ -42,4 +48,8 @@ data class User(
     override fun isAccountNonLocked(): Boolean = true
     override fun isCredentialsNonExpired(): Boolean = true
     override fun isEnabled(): Boolean = true
+}
+
+enum class Role {
+    Admin, Organizer, Racer
 }

@@ -1,5 +1,5 @@
 -- Заполнение таблицы Team
-INSERT INTO Team (name, city, contact_info, manager_name) VALUES
+INSERT INTO team (name, city, contact_info, manager_name) VALUES
 ('Red Bull Racing', 'Milton Keynes', 'info@redbullracing.com', 'Christian Horner'),
 ('Mercedes-AMG Petronas', 'Brackley', 'info@mercedesamgf1.com', 'Toto Wolff'),
 ('Ferrari', 'Maranello', 'info@ferrari.com', 'Frédéric Vasseur'),
@@ -14,7 +14,7 @@ INSERT INTO Team (name, city, contact_info, manager_name) VALUES
 ('Andretti Autosport', 'Indianapolis', 'info@andrettiautosport.com', 'Michael Andretti');
 
 -- Заполнение таблицы Racer
-INSERT INTO Racer (fullname, date_of_birth, category, license_number, contact_info, gender, country, team_id, photo) VALUES
+INSERT INTO racer (fullname, date_of_birth, category, license_number, contact_info, gender, country, team_id, photo) VALUES
 ('Max Verstappen', '1997-09-30', 'Professional', 'VER33', 'max@redbullracing.com', 'Male', 'Netherlands', 1, 'max_verstappen.jpg'),
 ('Lewis Hamilton', '1985-01-07', 'Professional', 'HAM44', 'lewis@mercedesamgf1.com', 'Male', 'United Kingdom', 2, 'lewis_hamilton.jpg'),
 ('Charles Leclerc', '1997-10-16', 'Professional', 'LEC16', 'charles@ferrari.com', 'Male', 'Monaco', 3, 'charles_leclerc.jpg'),
@@ -32,7 +32,7 @@ INSERT INTO Racer (fullname, date_of_birth, category, license_number, contact_in
 ('Daniel Ricciardo', '1989-07-01', 'Professional', 'RIC3', 'daniel@mclaren.com', 'Male', 'Australia', 4, 'daniel_ricciardo.jpg');
 
 -- Заполнение таблицы Race
-INSERT INTO Race (name, date, location, type, distance, description, place, time) VALUES
+INSERT INTO race (name, date, location, type, distance, description, place, time) VALUES
 ('Australian Grand Prix', '2024-03-24', 'Melbourne', 'Formula 1', 307.574, 'Opening race of the season', 'Melbourne Grand Prix Circuit', '14:00:00'),
 ('Bahrain Grand Prix', '2024-03-03', 'Sakhir', 'Formula 1', 308.238, 'Night race in the desert', 'Bahrain International Circuit', '18:00:00'),
 ('Saudi Arabian Grand Prix', '2024-03-09', 'Jeddah', 'Formula 1', 308.45, 'Fast street circuit', 'Jeddah Street Circuit', '20:00:00'),
@@ -47,7 +47,7 @@ INSERT INTO Race (name, date, location, type, distance, description, place, time
 ('Italian Grand Prix', '2024-09-01', 'Monza', 'Formula 1', 306.72, 'Temple of Speed', 'Monza Circuit', '15:00:00');
 
 -- Заполнение таблицы Track
-INSERT INTO Track (name, length, turns_count, surface_type, description, country, city) VALUES
+INSERT INTO track (name, length, turns_count, surface_type, description, country, city) VALUES
 ('Melbourne Grand Prix Circuit', 5.303, 16, 'Asphalt', 'Semi-street circuit', 'Australia', 'Melbourne'),
 ('Bahrain International Circuit', 5.412, 15, 'Asphalt', 'Modern circuit in the desert', 'Bahrain', 'Sakhir'),
 ('Jeddah Street Circuit', 6.174, 27, 'Asphalt', 'Fast and flowing street circuit', 'Saudi Arabia', 'Jeddah'),
@@ -62,7 +62,7 @@ INSERT INTO Track (name, length, turns_count, surface_type, description, country
 ('Monza Circuit', 5.793, 11, 'Asphalt', 'Temple of Speed', 'Italy', 'Monza');
 
 -- Заполнение таблицы Track_Race
-INSERT INTO Track_Race (track_id, race_id) VALUES
+INSERT INTO track_race (track_id, race_id) VALUES
 (1, 1),  -- Australian GP на Melbourne
 (2, 2),  -- Bahrain GP на Sakhir
 (3, 3),  -- Saudi Arabian GP на Jeddah
@@ -85,7 +85,7 @@ INSERT INTO Track_Race (track_id, race_id) VALUES
 (8, 3);  -- Saudi Arabian GP на Montreal (альтернативный вариант)
 
 -- Заполнение таблицы Vehicle
-INSERT INTO Vehicle (type, make, model, year, engine_number, racer_id, description) VALUES
+INSERT INTO vehicle (type, make, model, year, engine_number, racer_id, description) VALUES
 ('Formula 1', 'Red Bull', 'RB19', 2023, 'RB19-01', 1, 'Max Verstappens car'),
 ('Formula 1', 'Mercedes', 'W14', 2023, 'W14-02', 2, 'Lewis Hamiltons car'),
 ('Formula 1', 'Ferrari', 'SF-23', 2023, 'SF23-03', 3, 'Charles Leclers car'),
@@ -103,7 +103,7 @@ INSERT INTO Vehicle (type, make, model, year, engine_number, racer_id, descripti
 ('Formula 1', 'McLaren', 'MCL60', 2023, 'MCL60-15', 15, 'Daniel Ricciardos car');
 
 -- Заполнение таблицы Employee (15 записей)
-INSERT INTO Employee (fullname, date_of_birth, passport, gender, place_of_living, position) VALUES
+INSERT INTO employee (fullname, date_of_birth, passport, gender, place_of_living, position) VALUES
 ('John Smith', '1980-05-10', 'AB1234567', 'Male', 'London', 'Race Organizer'),
 ('Alice Johnson', '1985-12-01', 'CD7890123', 'Female', 'New York', 'Chief Mechanic'),
 ('Bob Williams', '1975-03-15', 'EF3456789', 'Male', 'Paris', 'Team Manager'),
@@ -121,25 +121,25 @@ INSERT INTO Employee (fullname, date_of_birth, passport, gender, place_of_living
 ('Jason White', '1972-09-08', 'BB5678901', 'Male', 'Cairo', 'Security Chief');
 
 -- Заполнение таблицы "User"
-INSERT INTO "User" (name, password, role, email, racer_id, employee_id) VALUES
-('maxverstappen', 'password123', 'Racer', 'max@redbullracing.com', 1, NULL),
-('lewishamilton', 'securepass', 'Racer', 'lewis@mercedesamgf1.com', 2, NULL),
-('charlesleclerc', 'monacopass', 'Racer', 'charles@ferrari.com', 3, NULL),
-('landonorris', 'norris44', 'Racer', 'lando@mclaren.com', 4, NULL),
-('fernandoalonso', 'elplan', 'Racer', 'fernando@alpinef1.com', 5, NULL),
-('sebvettel', 'vettel5', 'Racer', 'sebastian@astonmartinf1.com', 6, NULL),
-('valtteribottas', 'bottas77', 'Racer', 'valtteri@alfaromeoracing.com', 7, NULL),
-('pierregasly', 'gasly10', 'Racer', 'pierre@alphatauri.com', 8, NULL),
-('kevinmagnussen', 'kmag20', 'Racer', 'kevin@haasf1team.com', 9, NULL),
-('alexalbon', 'albon23', 'Racer', 'alexander@williamsf1.com', 10, NULL),
-('josefnewgarden', 'indycar2', 'Racer', 'josef@teampenske.com', 11, NULL),
-('coltonherta', 'herta26', 'Racer', 'colton@andrettiautosport.com', 12, NULL),
-('adminuser', 'adminpass', 'Admin', 'admin@racingclub.com', NULL, NULL),
-('organizer1', 'orgpass', 'Organizer', 'organizer1@racingclub.com', NULL, 1),
-('mechanic1', 'mechpass', 'Mechanic', 'mechanic1@racingclub.com', NULL, 2);
+INSERT INTO app_user (name, password, role, email, racer_id, employee_id) VALUES
+('maxverstappen', '$2a$10$LDLCRDNcU5dKB0nlP3jeKOcZQenGJNLDTKW.3CW8zBf5CwVdiXI7C', 'Racer', 'max@redbullracing.com', 1, NULL), -- pass: password123
+('lewishamilton', '$2a$10$yAEC0RFZ.ubNin/7Jczdj.gYE0bMihazuxxwUfGc4OOL9UX2H1RD.', 'Racer', 'lewis@mercedesamgf1.com', 2, NULL), -- pass: securepass
+('charlesleclerc', '$2a$10$btRh5uH9GqrhwTY7/FhWPu0u0GYZQMdpd1LZYVz91v8Twyj0JmDti', 'Racer', 'charles@ferrari.com', 3, NULL), -- pass: monacopass
+('landonorris', '$2a$10$uhJ4gQncqA6K9hNUBEpsOuJMf4ZQ/L3Jgzpjtcy/x/qeZ5ZgB/tQO', 'Racer', 'lando@mclaren.com', 4, NULL), -- pass: norris44
+('fernandoalonso', '$2a$10$awCwRIuPrvqgwKFUaUyhIuHgor2Ibnb9EzNSYjJlp47hB1fnfEB9m', 'Racer', 'fernando@alpinef1.com', 5, NULL), -- pass: elplan
+('sebvettel', '$2a$10$IEiYt0d10YvbBwGGKmPMvuMMR7x2PeEEDouf..rv1m2FVFQRoRju.', 'Racer', 'sebastian@astonmartinf1.com', 6, NULL), -- pass: vettel5
+('valtteribottas', '$2a$10$NBjCfD0ux4yw7kO09sWT8e0MpOeYM2V51bbLtxeXvbkrzXV3hOuiy', 'Racer', 'valtteri@alfaromeoracing.com', 7, NULL), -- pass: bottas77
+('pierregasly', '$2a$10$PxZPG5xzBJ3MRRJ/SKrZO.f.4oV4budgj3qcXJhcOkkv1tkuGloa2', 'Racer', 'pierre@alphatauri.com', 8, NULL), -- pass: gasly10
+('kevinmagnussen', '$2a$10$tp3HlOREOEGRkjh.b56nmuZX3/QpdSY3sY7V92RmQHEzfF/RHcvUS', 'Racer', 'kevin@haasf1team.com', 9, NULL), -- pass: kmag20
+('alexalbon', '$2a$10$xqjGsWCn8mbiJPtWfZL1TuAPjcZszGAMUOWJuYwwy6J5T4Lqx3WVW', 'Racer', 'alexander@williamsf1.com', 10, NULL), -- pass: albon23
+('josefnewgarden', '$2a$10$Q4DmnnxjJRKV0ZZh4js8teiRUanvxQ/ZF5ji9Wi/HWWrZIJlY52lC', 'Racer', 'josef@teampenske.com', 11, NULL), -- pass: indycar2
+('coltonherta', '$2a$10$vnoMTb7WD4KdVk2/ZNrS8.6.K9VIO4pEDgpbQCSK9KAaMx/1xd2DC', 'Racer', 'colton@andrettiautosport.com', 12, NULL), --pass: herta26
+('adminuser', '$2a$10$p4iBiqrS/lWZNTSQ/87eSOSkOqQVKo2KH8dBl3NsZ1s8rskfQgNz6', 'Admin', 'admin@racingclub.com', NULL, NULL), -- pass: adminpass
+('organizer1', '$2a$10$l4ta0ann81NX2ekm5vNqa.rARLF..fQzv9gdxBihAc.1DaltNaOXe', 'Organizer', 'organizer1@racingclub.com', NULL, 1); --pass: orgpass
+
 
 -- Заполнение таблицы Rating
-INSERT INTO Rating (id_racer, id_race, racer_place, racer_time) VALUES
+INSERT INTO rating (id_racer, id_race, racer_place, racer_time) VALUES
 (1, 1, 1, '01:30:00'), -- Max Verstappen, Australian GP, 1st
 (2, 1, 2, '01:30:15'), -- Lewis Hamilton, Australian GP, 2nd
 (3, 1, 3, '01:30:30'), -- Charles Leclerc, Australian GP, 3rd

@@ -3,7 +3,7 @@ package com.speed320.racing_club.model
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "Team")
+@Table(name = "team")
 data class Team(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
