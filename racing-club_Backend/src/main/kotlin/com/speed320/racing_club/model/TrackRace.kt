@@ -11,12 +11,12 @@ data class TrackRace(
 
     @ManyToOne
     @MapsId("trackId")
-    @JoinColumn(name = "track_id")
+    @JoinColumn(name = "track_id", nullable = false)
     val track: Track,
 
     @ManyToOne
     @MapsId("raceId")
-    @JoinColumn(name = "race_id")
+    @JoinColumn(name = "race_id", nullable = false)
     val race: Race
 )
 

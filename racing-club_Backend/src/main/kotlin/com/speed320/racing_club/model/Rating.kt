@@ -10,19 +10,19 @@ data class Rating(
     @EmbeddedId
     val id: RatingId? = null,
 
-    @Column(name = "racer_place")
+    @Column(name = "racer_place", nullable = false)
     var racerPlace: Int,
-    @Column(name = "racer_time")
+    @Column(name = "racer_time", nullable = false)
     var racerTime: LocalTime,
 
     @ManyToOne
     @MapsId("racerId")
-    @JoinColumn(name = "id_racer")
+    @JoinColumn(name = "id_racer", nullable = false)
     val racer: Racer,
 
     @ManyToOne
     @MapsId("raceId")
-    @JoinColumn(name = "id_race")
+    @JoinColumn(name = "id_race", nullable = false)
     val race: Race
 )
 
