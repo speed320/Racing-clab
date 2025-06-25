@@ -18,25 +18,25 @@ class RatingServiceImpl(
     repository = ratingRepository,
     toDto = { rating ->
         RatingDto(
-            racerId = rating.id!!.racerId,
-            racerName = rating.racer.fullName,
-            raceId = rating.id!!.raceId,
-            raceName = rating.race.name,
+            racerId    = rating.id!!.racerId,
+            racerName  = rating.racer.fullName,
+            raceId     = rating.id!!.raceId,
+            raceName   = rating.race.name,
             racerPlace = rating.racerPlace,
-            racerTime = rating.racerTime
+            racerTime  = rating.racerTime
         )
     },
     toEntity = { dto ->
         Rating(
-            id = RatingId(dto.racerId, dto.raceId),
+            id         = RatingId(dto.racerId, dto.raceId),
             racerPlace = dto.racerPlace,
-            racerTime = dto.racerTime,
-            racer = racerRepository.findById(dto.racerId).get(),
-            race = raceRepository.findById(dto.raceId).get()
+            racerTime  = dto.racerTime,
+            racer      = racerRepository.findById(dto.racerId).get(),
+            race       = raceRepository.findById(dto.raceId).get()
         )
     },
     updateEntity = { entity, dto ->
         entity.racerPlace = dto.racerPlace
-        entity.racerTime = dto.racerTime
+        entity.racerTime  = dto.racerTime
     }
 ), RatingService

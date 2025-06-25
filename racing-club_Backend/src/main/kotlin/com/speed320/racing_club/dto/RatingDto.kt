@@ -1,12 +1,15 @@
 package com.speed320.racing_club.dto
 
+import com.fasterxml.jackson.annotation.JsonProperty
 import java.time.LocalTime
 
 data class RatingDto(
     val racerId: Long,
-    val racerName: String,
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    val racerName: String? = null,
     val raceId: Long,
-    val raceName: String,
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
+    val raceName: String? = null,
     val racerPlace: Int,
     val racerTime: LocalTime
 )
