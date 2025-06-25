@@ -15,21 +15,21 @@ INSERT INTO team (name, city, contact_info, manager_name) VALUES
 
 -- Заполнение таблицы Racer
 INSERT INTO racer (fullname, date_of_birth, category, license_number, contact_info, gender, country, team_id, photo) VALUES
-('Max Verstappen', '1997-09-30', 'Professional', 'VER33', 'max@redbullracing.com', 'Male', 'Netherlands', 1, 'max_verstappen.jpg'),
-('Lewis Hamilton', '1985-01-07', 'Professional', 'HAM44', 'lewis@mercedesamgf1.com', 'Male', 'United Kingdom', 2, 'lewis_hamilton.jpg'),
-('Charles Leclerc', '1997-10-16', 'Professional', 'LEC16', 'charles@ferrari.com', 'Male', 'Monaco', 3, 'charles_leclerc.jpg'),
-('Lando Norris', '1999-11-13', 'Professional', 'NOR4', 'lando@mclaren.com', 'Male', 'United Kingdom', 4, 'lando_norris.jpg'),
-('Fernando Alonso', '1981-07-29', 'Professional', 'ALO14', 'fernando@alpinef1.com', 'Male', 'Spain', 5, 'fernando_alonso.jpg'),
-('Sebastian Vettel', '1987-07-03', 'Professional', 'VET5', 'sebastian@astonmartinf1.com', 'Male', 'Germany', 6, 'sebastian_vettel.jpg'),
-('Valtteri Bottas', '1989-08-28', 'Professional', 'BOT77', 'valtteri@alfaromeoracing.com', 'Male', 'Finland', 7, 'valtteri_bottas.jpg'),
-('Pierre Gasly', '1996-02-07', 'Professional', 'GAS10', 'pierre@alphatauri.com', 'Male', 'France', 8, 'pierre_gasly.jpg'),
-('Kevin Magnussen', '1992-10-05', 'Professional', 'MAG20', 'kevin@haasf1team.com', 'Male', 'Denmark', 9, 'kevin_magnussen.jpg'),
-('Alexander Albon', '1996-03-23', 'Professional', 'ALB23', 'alexander@williamsf1.com', 'Male', 'Thailand', 10, 'alexander_albon.jpg'),
-('Josef Newgarden', '1990-12-22', 'Professional', 'NEW2', 'josef@teampenske.com', 'Male', 'USA', 11, 'josef_newgarden.jpg'),
-('Colton Herta', '2000-03-30', 'Professional', 'HER26', 'colton@andrettiautosport.com', 'Male', 'USA', 12, 'colton_herta.jpg'),
-('Carlos Sainz Jr.', '1994-09-01', 'Professional', 'SAI55', 'carlos@ferrari.com', 'Male', 'Spain', 3, 'carlos_sainz.jpg'),
-('Sergio Perez', '1990-01-26', 'Professional', 'PER11', 'sergio@redbullracing.com', 'Male', 'Mexico', 1, 'sergio_perez.jpg'),
-('Daniel Ricciardo', '1989-07-01', 'Professional', 'RIC3', 'daniel@mclaren.com', 'Male', 'Australia', 4, 'daniel_ricciardo.jpg');
+('Max Verstappen', '1997-09-30', 'Professional', 'VER33', 'max@redbullracing.com', 'Male', 'Netherlands', 1, '/uploads/max_verstappen.jpg'),
+('Lewis Hamilton', '1985-01-07', 'Professional', 'HAM44', 'lewis@mercedesamgf1.com', 'Male', 'United Kingdom', 2, '/uploads/lewis_hamilton.jpg'),
+('Charles Leclerc', '1997-10-16', 'Professional', 'LEC16', 'charles@ferrari.com', 'Male', 'Monaco', 3, '/uploads/charles_leclerc.jpg'),
+('Lando Norris', '1999-11-13', 'Professional', 'NOR4', 'lando@mclaren.com', 'Male', 'United Kingdom', 4, '/uploads/lando_norris.jpg'),
+('Fernando Alonso', '1981-07-29', 'Professional', 'ALO14', 'fernando@alpinef1.com', 'Male', 'Spain', 5, '/uploads/fernando_alonso.jpg'),
+('Sebastian Vettel', '1987-07-03', 'Professional', 'VET5', 'sebastian@astonmartinf1.com', 'Male', 'Germany', 6, '/uploads/sebastian_vettel.jpg'),
+('Valtteri Bottas', '1989-08-28', 'Professional', 'BOT77', 'valtteri@alfaromeoracing.com', 'Male', 'Finland', 7, '/uploads/valtteri_bottas.jpg'),
+('Pierre Gasly', '1996-02-07', 'Professional', 'GAS10', 'pierre@alphatauri.com', 'Male', 'France', 8, '/uploads/pierre_gasly.jpg'),
+('Kevin Magnussen', '1992-10-05', 'Professional', 'MAG20', 'kevin@haasf1team.com', 'Male', 'Denmark', 9, '/uploads/kevin_magnussen.jpg'),
+('Alexander Albon', '1996-03-23', 'Professional', 'ALB23', 'alexander@williamsf1.com', 'Male', 'Thailand', 10, '/uploads/alexander_albon.jpg'),
+('Josef Newgarden', '1990-12-22', 'Professional', 'NEW2', 'josef@teampenske.com', 'Male', 'USA', 11, '/uploads/josef_newgarden.jpg'),
+('Colton Herta', '2000-03-30', 'Professional', 'HER26', 'colton@andrettiautosport.com', 'Male', 'USA', 12, '/uploads/colton_herta.jpg'),
+('Carlos Sainz Jr.', '1994-09-01', 'Professional', 'SAI55', 'carlos@ferrari.com', 'Male', 'Spain', 3, '/uploads/carlos_sainz.jpg'),
+('Sergio Perez', '1990-01-26', 'Professional', 'PER11', 'sergio@redbullracing.com', 'Male', 'Mexico', 1, '/uploads/sergio_perez.jpg'),
+('Daniel Ricciardo', '1989-07-01', 'Professional', 'RIC3', 'daniel@mclaren.com', 'Male', 'Australia', 4, '/uploads/daniel_ricciardo.jpg');
 
 -- Заполнение таблицы Race
 INSERT INTO race (name, date, location, type, distance, description, place, time) VALUES

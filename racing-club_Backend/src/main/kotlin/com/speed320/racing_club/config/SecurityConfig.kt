@@ -54,6 +54,13 @@ class SecurityConfig(
             .sessionManagement { it.sessionCreationPolicy(SessionCreationPolicy.STATELESS) }
             .authorizeHttpRequests { auth ->
                 auth
+
+                    .requestMatchers(
+                        "/uploads/**",
+                        "/css/**", "/js/**", "/favicon.ico",
+                        "/", "/index.html"
+                    ).permitAll()
+
                     .requestMatchers(
                         "/api/auth/**",
                         "/v3/api-docs/**",
@@ -77,8 +84,8 @@ class SecurityConfig(
     fun corsConfigurationSource(): CorsConfigurationSource {
         val cfg = CorsConfiguration().apply {
             allowedOrigins = listOf("http://localhost:3000")
-            allowedMethods = listOf("GET","POST","PUT","DELETE","OPTIONS")
-            allowedHeaders = listOf("Authorization","Content-Type")
+            allowedMethods = listOf("GET", "POST", "PUT", "DELETE", "OPTIONS")
+            allowedHeaders = listOf("Authorization", "Content-Type")
             exposedHeaders = listOf("Authorization")
             allowCredentials = true
         }

@@ -10,8 +10,10 @@ import com.speed320.racing_club.repository.UserRepository
 import com.speed320.racing_club.service.UserService
 import org.springframework.security.crypto.password.PasswordEncoder
 import org.springframework.stereotype.Service
+import org.springframework.transaction.annotation.Transactional
 
 @Service
+@Transactional
 class UserServiceImpl(
     private val userRepository: UserRepository,
     private val racerRepository: RacerRepository,
@@ -21,20 +23,29 @@ class UserServiceImpl(
     repository = userRepository,
     toDto = User::toDto,
     toEntity = { dto ->
+        val rawPassword = dto.password
+            ?: throw IllegalArgumentException("Password is required for user creation")
+
         val racer = dto.racerId?.let { racerRepository.findById(it).orElse(null) }
         val employee = dto.employeeId?.let { employeeRepository.findById(it).orElse(null) }
         dto.toEntity(
             racerProvider = { racer },
             employeeProvider = { employee }
         ).apply {
-            _password = passwordEncoder.encode(dto._password)
+            _password = passwordEncoder.encode(rawPassword)
         }
     },
     updateEntity = { entity, dto ->
         entity.name = dto.name
-        entity.role = dto.role
         entity.email = dto.email
-        entity._password = passwordEncoder.encode(dto._password)
+        entity.role = dto.role
+
+        dto.password
+            ?.takeIf { it.isNotBlank() }
+            ?.let { newRaw ->
+                entity._password = passwordEncoder.encode(newRaw)
+            }
+
         entity.racer = dto.racerId?.let { racerRepository.findById(it).orElse(null) }
         entity.employee = dto.employeeId?.let { employeeRepository.findById(it).orElse(null) }
     }

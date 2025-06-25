@@ -8,7 +8,7 @@ import com.speed320.racing_club.model.User
 fun User.toDto(): UserDto = UserDto(
     id = id,
     name = name,
-    _password = _password,
+    password = null,
     role = role,
     email = email,
     racerId = racer?.id,
@@ -23,7 +23,7 @@ fun UserDto.toEntity(
 ): User = User(
     id = id,
     name = name,
-    _password = _password,
+    _password = password!!,
     role = role,
     email = email,
     racer = racerProvider(racerId),

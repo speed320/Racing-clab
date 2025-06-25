@@ -21,6 +21,7 @@ import TrackFormPage from "./form/TrackFormPage";
 import VehicleFormPage from "./form/VehicleFormPage";
 import RatingFormPage from "./form/RatingFormPage";
 import UserFormPage from "./form/UserFormPage";
+import HomePage from "./page/HomePage";
 
 function App() {
     return (
@@ -160,7 +161,7 @@ function App() {
                         } />
                         <Route path="/" element={
                             <ProtectedRoute>
-                                <EmployeesPage />
+                                <HomePage />
                             </ProtectedRoute>
                         } />
                     </Routes>
